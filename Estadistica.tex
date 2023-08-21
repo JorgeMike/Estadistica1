@@ -1,0 +1,371 @@
+\documentclass[11pt, a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=green,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\title{Estadística 1}
+\author{Jorge Miguel Alvarado Reyes}
+\date{16 Agosto 2023}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Medidas de Tendencia Central}
+
+Las medidas de tendencia central son valores de un conjunto de datos que se encuentran en el centro de los datos ordenados.
+
+\subsection{Media}
+
+Existen dos tipos de media: la aritmética y la ponderada.
+
+La \textbf{media aritmética} se calcula sumando todos los valores y dividiendo por la cantidad de valores:
+\[
+    \text{Media}(x) = \frac{\sum_{i=1}^{n} x_i}{n}
+\]
+
+\textbf{Propiedades}:
+\begin{enumerate}
+    \item $Media(cx) = c \cdot Media(x)$
+    \item $Media(x+c) = Media(x) + c$
+\end{enumerate}
+
+\textbf{Ejemplo 4}:
+Mostrar que $Media(x+c) = Media(x) + c$.
+
+\textbf{Demostración}:
+\[
+    \begin{aligned}
+        Media(x+c) & = \frac{x_1+c + \ldots + x_n+c}{n}         \\
+                   & = \frac{x_1 + \ldots + x_n + n \cdot c}{n} \\
+                   & = \frac{x_1 + \ldots + x_n}{n} + c         \\
+                   & = Media(x) + c
+    \end{aligned}
+\]
+
+\textbf{Ejemplo 5}:
+Mostrar que $Media(cx) = c \cdot \text{Media}(x)$.
+
+La \textbf{media ponderada} se define como:
+\[
+    \overline{x} = \frac{\sum_{i=1}^{n} w_i \cdot x_i}{\sum_{i=1}^{n} w_i}
+\]
+
+\subsection{Mediana}
+
+La mediana es el valor central que divide a un conjunto de datos ordenados en dos partes iguales. Si $n$ es par, se calcula como:
+\[
+    Mediana(x) = \frac{x(\frac{n}{2}) + x(\frac{n}{2} + 1)}{2}
+\]
+
+% - Estilos -
+
+\subsection{Moda}
+
+Es el valor que mas se repite en un conjunto  de observaciones. \\
+\textbf{Ejemplo 6}:
+
+\begin{enumerate}
+    \item $[1,2,3,4,5]$ Aqui no existe moda
+    \item $[3,4,4,5,5,6]$ Moda = 4.5
+    \item $[3,3,4,5,6,6]$ Moda = 3 y 6
+    \item $[2,7,7,7,9]$ Moda = 7
+\end{enumerate}
+
+\subsection{Media para una serie de frecuencias}
+
+Si $f_1, ... , f_n$ son las frecuencias de la variable $x$. Entonces.
+\[
+    Mediana(x) = \frac{\sum^{n}_{i=1}f_i \cdot x_i}{\sum^{n}_{i=1}f_i}
+\]
+
+
+\textbf{Ejemplo 7}: \\
+Calcula la media para los siguientes valores
+\[
+    \begin{tabular}{|c|c|}
+        \hline
+        $x$ & $f_i$ \\
+        \hline
+        2   & 4     \\
+        5   & 1     \\
+        6   & 3     \\
+        8   & 4     \\
+        \hline
+    \end{tabular}
+\]
+
+\[
+    Mediana(x) = \frac{(2\cdot4) + (5\cdot1) + (6\cdot3) + (8\cdot4)}{4+1+3+4} = \frac{8+5+18+32}{12} = \frac{63}{12}
+\]
+
+\subsection{Media para datos agrupados}
+
+Sean $f_1, ... , f_n$ las frecuencias de la varible $x$ y $c_1, ... , c_n$ las marcas de clase, entonces: (Marca de clase es un representante)
+
+\[
+    Media(x) = \frac{\sum^{n}_{i=1}f_i \cdot c_i}{\sum^{n}_{i=1}f_i}
+\]
+
+\textbf{Ejemplo 8}: \\
+Calcula la edad promedio para el siguiente conjunto de datos
+\[
+    \begin{tabular}{|c|c|}
+        \hline
+        Adulto                    & 25 \\
+        \hline
+        Adulto de la tercera edad & 10 \\
+        \hline
+    \end{tabular}
+\]
+
+Adulto, edad = [20,65], $c_1 = 43$ \\
+Adulto tercera edad, edad = [65,100], $c_1 = 83$\\
+
+25 veces 43 y 10 veces 83
+
+\[
+    Mediana(x) = L_{i} t(\frac{\frac{n}{2} - 3 \sum f_i}{f_{mediana}}) \cdot c \\ \\
+\]
+
+\noindent $L_i$ = limite inferior de la clase que contiene la mediana\\
+$n$ = frecuencia total \\
+$\sum f_i$ = suma de las frecuencias menores a la mediana\\
+$f_{mediana}$ = Frecuencia de la clase que contiene la mediana\\
+$c$ = longitud del intervalo que contiene la mediana \\
+
+\newpage
+
+\section{18 Agosto 2023}
+
+Sitio del curso: https://piazza.com/unam.mx/other/ei20241 \\
+codigo de acceso: 150621
+
+\subsection{Breve introduccion a latex}
+
+LaTeX es una herramienta para crear documentos de una gran
+calidad tipográfica, en donde los usuarios se ocupan en mayor
+medida del contenido del texto en lugar del formato.
+
+\subsubsection{Principales clases de documentos}
+
+\[
+    \begin{tabular}{|c|c|}
+        \hline
+        Clase   & Proposito                                      \\
+        \hline
+        article & Articulos de revista                           \\
+        report  & Textos largos como tesis o reportes            \\
+        book    & Libros o documentos con una estructura similar \\
+        lette   & cartas                                         \\
+        \hline
+    \end{tabular}
+\]
+
+\subsubsection{Paquetes}
+
+\[
+    \begin{tabular}{|c|c|}
+        \hline
+        Nombre                    & Funcion                                  \\
+        \hline
+        amsmath, amssymb, amsfont & Permiten el uso de símbolos matemáticos. \\
+        babel                     & Escribir en diversos idiomas.            \\
+        inputec                   & Codificacion de entradas.                \\
+        \hline
+    \end{tabular}
+\]
+
+\subsubsection{Estructura de un documento}
+
+\begin{verbatim}
+    \documentclass[11pt, a4paper]{report}
+    \usepackage[utf8]{inputec}
+    \usepackage[spanish]{babel}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{amsfont}
+    
+    \title{Titulo}
+    \author{Nombre}
+    \date{\today}
+    \begin{document}
+    \maketitle
+    ...
+    \end{document}
+\end{verbatim}
+
+\subsubsection{LaTex en linea}
+Crear cuenta en https://es.overleaf.com \\
+
+New project \textrightarrow Blank project \textrightarrow Escribir nombre del documento
+\textrightarrow Create
+
+Menu \textrightarrow spell check spanish
+
+\subsubsection{Partes de un documento}
+
+\begin{verbatim}
+    \section*{title}
+    \subsection*{title}
+    \subsubsection*{title}
+
+    \part*{title}
+    \chapter*{title}
+\end{verbatim}
+
+\subsubsection{Tamaños de fuente}
+
+\begin{verbatim}
+    \huge
+    \Huge
+    \LARGE
+    \Large
+    \large
+    \normalsize
+    \small
+    \tiny
+\end{verbatim}
+
+\subsubsection{Listas numeradas y viñetas}
+
+\begin{verbatim}
+    \begin{itemize}[a]
+        \item
+        \item 
+    \end{itemize}
+
+    \begin{enumerate}
+        \item
+        \item 
+    \end{itemize}
+\end{verbatim}
+
+\subsubsection{Alineacion de texto}
+
+\begin{verbatim}
+    \begin{center}
+        ...
+    \end{center}
+\end{verbatim}
+
+\subsubsection{Composicion de ecuaciones}
+
+\begin{verbatim}
+    $x^2+2x+3=0$
+\end{verbatim}
+
+\subsubsection{Alinear expresion con algun elemento}
+
+\begin{verbatim}
+    \begin{align*}
+        c^2 &= a^2 + b^2 \\
+        &= 2^2 + 3^2 \\
+        &= 13
+    \end{align*}
+\end{verbatim}
+
+\subsubsection{Tablas}
+
+\begin{verbatim}
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{c | c  c}
+            a & b & c\\   
+            a & b & c\\   
+            a & b & c\\        
+        \end{tabular}
+    \end{table}
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{| c c c |}
+            \hline
+            a & b & c\\   
+            \hline
+            a & b & c\\  
+            \hline 
+            a & b & c\\
+            \hline       
+        \end{tabular}
+    \end{table}
+    
+\end{verbatim}
+
+\subsubsection{Como insertar una imagen}
+
+\begin{verbatim}
+    \usepackage{graphicx}
+    \includegraphics[width = , height = ]{archivo.jpg,png,etc.}
+\end{verbatim}
+
+\newpage
+
+\subsection{Clase}
+
+\textbf{Ejemplo 9}:
+
+Encuentran la mediana para las siguientes observaciones
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{| c | c | c |}
+        \hline
+        Intervalo      & Frecuencia & Frecuencia acumulada \\
+        \hline
+        (118.5,126.5]  & 3          & 3                    \\
+        \hline
+        (126.5,135.5]  & 5          & 8                    \\
+        \hline
+        (135.5,144.5]  & 9          & 17                   \\
+        \hline
+        (144.5,153.5]  & 12         & 29                   \\
+        \hline
+        (153.5,162.5]  & 5          & 34                   \\
+        \hline
+        (162.5,171.5]  & 4          & 38                   \\
+        \hline
+        (171.5, 180.5] & 2          & 40                   \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\noindent $L_i$ = limite inferior de la clase que contiene la mediana\\
+$n$ = frecuencia total \\
+$\sum f_i$ = suma de las frecuencias menores a la mediana\\
+$f_{mediana}$ = Frecuencia de la clase que contiene la mediana\\
+$c$ = longitud del intervalo que contiene la mediana \\
+
+\noindent $L_i$ = 144.5\\
+$n$ = 40\\
+$\sum f_i$ = 17\\
+$f_{mediana}$ = 12 \\
+$c$ = 153.5 - 144.5 = 9\\
+
+\begin{align*}
+    Mediana(x) & = \frac{x_{20} + x_{21}}{2} = 146.75                         \\
+               & = L_i + (\frac{\frac{n}{2} - \sum f_i}{f_{mediana}}) \cdot c \\
+\end{align*}
+
+\section{21 Agosto 2023}
+
+\subsection{Medidas de posición}
+
+
+
+\end{document}
