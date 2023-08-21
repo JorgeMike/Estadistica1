@@ -1,4 +1,4 @@
-\documentclass[11pt, a4paper]{report}
+\documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{amsmath}
@@ -22,19 +22,23 @@
 
 \maketitle
 
+\newpage
+
 \tableofcontents
 
 \newpage
 
-\section{Medidas de Tendencia Central}
+\section{16 de agosto 2023} %Medidas de Tendencia Central
 
 Las medidas de tendencia central son valores de un conjunto de datos que se encuentran en el centro de los datos ordenados.
 
-\subsection{Media}
+\subsection{Medidas de Tendencia Central} %media
 
-Existen dos tipos de media: la aritmética y la ponderada.
+\subsubsection{Media}
 
-La \textbf{media aritmética} se calcula sumando todos los valores y dividiendo por la cantidad de valores:
+\noindent Existen dos tipos de media: la aritmética y la ponderada.
+
+\noindent La \textbf{media aritmética} se calcula sumando todos los valores y dividiendo por la cantidad de valores:
 \[
     \text{Media}(x) = \frac{\sum_{i=1}^{n} x_i}{n}
 \]
@@ -46,6 +50,7 @@ La \textbf{media aritmética} se calcula sumando todos los valores y dividiendo 
 \end{enumerate}
 
 \textbf{Ejemplo 4}:
+
 Mostrar que $Media(x+c) = Media(x) + c$.
 
 \textbf{Demostración}:
@@ -59,6 +64,7 @@ Mostrar que $Media(x+c) = Media(x) + c$.
 \]
 
 \textbf{Ejemplo 5}:
+
 Mostrar que $Media(cx) = c \cdot \text{Media}(x)$.
 
 La \textbf{media ponderada} se define como:
@@ -66,18 +72,18 @@ La \textbf{media ponderada} se define como:
     \overline{x} = \frac{\sum_{i=1}^{n} w_i \cdot x_i}{\sum_{i=1}^{n} w_i}
 \]
 
-\subsection{Mediana}
+\subsubsection{Mediana}
 
-La mediana es el valor central que divide a un conjunto de datos ordenados en dos partes iguales. Si $n$ es par, se calcula como:
+\noindent La mediana es el valor central que divide a un conjunto de datos ordenados en dos partes iguales. Si $n$ es par, se calcula como:
 \[
     Mediana(x) = \frac{x(\frac{n}{2}) + x(\frac{n}{2} + 1)}{2}
 \]
 
 % - Estilos -
 
-\subsection{Moda}
+\subsubsection{Moda}
 
-Es el valor que mas se repite en un conjunto  de observaciones. \\
+\noindent Es el valor que mas se repite en un conjunto  de observaciones. \\
 \textbf{Ejemplo 6}:
 
 \begin{enumerate}
@@ -364,7 +370,211 @@ $c$ = 153.5 - 144.5 = 9\\
 
 \section{21 Agosto 2023}
 
-\subsection{Medidas de posición}
+\subsection{Medidas de posición (1.6.4)}
+
+\subsubsection{Cuantiles}
+\noindent Sean $x_1, \dots , x_n$ observaciones de una variable aleatoria $x$ y $p \in (0,1)$. Un cuantil al $100p\%$ es el numero c que cumple con las siguientes condiciones.
+
+\begin{itemize}
+    \centering
+    \item $\frac{\#\{x_i|x_i \leq c\}}{n} \geq p$
+    \item $\frac{\#\{x_i|x_i \leq c\}}{n} \geq 1 - p$
+\end{itemize}
+
+Casos particulares
+
+\begin{itemize}
+    \centering
+    \item Deciles: si $p = \{0.1, \dots, 0.9\}$
+    \item Cuartiles: si $p = \{0.25, 0.50, 0.75\}$
+    \item Percentiles: si $p = \{0.01, 0.02, \dots, 0.99\}$
+\end{itemize}
+
+Si c=0
+
+\begin{itemize}
+    \centering
+    \item $\frac{\#\{x_i|x_i \leq 0\}}{n} \geq p$
+
+          $\frac{1}{2} \geq p, p = \{0.1,0.2,0.3,0.4,0.5\}$
+    \item $\frac{\#\{x_i|x_i \geq 0\}}{n} \geq 1 - p$
+
+          $\frac{2}{2} \geq 1-p, p = \{0.1,0.2,0.3,0.4,0.5\}$
+\end{itemize}
+
+Si c=1
+
+\begin{itemize}
+    \centering
+    \item $\frac{\#\{x_i|x_i \leq 1\}}{n} \geq p$
+
+          $\frac{2}{2} \geq p, p = \{0.5,0.6,0.7,0.8,0.9\}$
+    \item $\frac{\#\{x_i|x_i \geq 1\}}{n} \geq 1 - p$
+
+          $\frac{1}{2} \geq 1-p, p = \{0.5,0.6,0.7,0.8,0.9\}$
+\end{itemize}
+
+\textbf{Ejemplo 10}
+
+Calcula los deciles de la variable $x = \{0.1\}$
+
+\begin{itemize}
+    \centering
+    \item q(0.1) = 0
+    \item q(0.2) = 0
+    \item q(0.3) = 0
+    \item q(0.4) = 0
+    \item q(0.5) = 0.5
+    \item q(0.6) = 1
+    \item q(0.7) = 1
+    \item q(0.8) = 1
+    \item q(0.9) = 1
+\end{itemize}
+
+\newpage
+
+\textbf{Ejemplo 11}
+
+Calcula los cuantiles cd la variable $x=\{0,1,2,3\}$, $n=4$
+
+Si c=0
+
+\begin{itemize}
+    \centering
+    \item $\frac{\#\{x_i|x_i \leq 0\}}{n} \geq p$
+
+          $\frac{1}{2} \geq p, p = \{0.1,0.2,0.3,0.4,0.5\}$
+    \item $\frac{\#\{x_i|x_i \geq 0\}}{n} \geq 1 - p$
+
+          $\frac{2}{2} \geq 1-p, p = \{0.1,0.2,0.3,0.4,0.5\}$
+\end{itemize}
+
+Si c=1
+
+\begin{itemize}
+    \centering
+    \item $\frac{\#\{x_i|x_i \leq 1\}}{n} \geq p$
+
+          $\frac{2}{2} \geq p, p = \{0.5,0.6,0.7,0.8,0.9\}$
+    \item $\frac{\#\{x_i|x_i \geq 1\}}{n} \geq 1 - p$
+
+          $\frac{1}{2} \geq 1-p, p = \{0.5,0.6,0.7,0.8,0.9\}$
+\end{itemize}
+
+\begin{itemize}
+    \item q(0.25) = 0.5
+    \item q(0.50) = 1.5
+    \item q(0.75) = ???? - INVESTIGAR
+\end{itemize}
+
+\noindent Sean $x_1, \dots , x_n$ observaciones de la variable aleatoria x. La varianza de x es
+\[
+    var(x)=\frac{1}{n} \sum_{i=1}^{n}(x_1-\bar{x})^2
+\]
+\[
+    \bar{x} = \frac{1}{n} \sum_{i=1}^{n}x_i
+\]
+
+Propiedades de la varianza
+
+\begin{center}
+    $var(x+c) = var(x)$ \\
+    \vspace{.25cm}
+    $var(ax) = a^2var(x)$
+\end{center}
+
+\newpage
+
+\textbf{Ejemplo 12}
+
+Muestra que $var(ax) = a^2var(x)$
+
+Demostracion:
+
+\begin{align*}
+    var(ax) & = \frac{1}{n} \sum_{i=1}^{n}(ax_i - a\bar{x})^2   \\
+            & = \frac{1}{n} \sum_{i=1}^{n}(a(x_i - \bar{x}))^2  \\
+            & = a^2 \frac{1}{n} \sum_{i=1}^{n}(x_i - \bar{x})^2 \\
+            & = a^2 var(x)
+\end{align*}
+
+\subsubsection{Desviacion estandar}
+
+\noindent Sean $x_1, \dots, x_n$ observaciones de la variable x.la desviacion estandar de x es
+
+\[
+    De(x)=\sqrt{var(x)}
+\]
+
+Propiedades
+
+\begin{center}
+    $De(x+c) = De(x)$ \\
+    \vspace{.25cm}
+    $De(ax) = |a|De(x)$
+\end{center}
+
+\subsubsection{Desviacion media}
+
+\noindent Sean $x_1, \dots, x_n$ observaciones de la variable x.la desviacion media de x es
+
+\[
+    Dm(x)=\frac{1}{n} \sum_{i=1}^{n}|x_i - \bar{x}|
+\]
+
+Propiedades
+
+\begin{center}
+    $Dm(x+c) = Dm(x)$ \\
+    \vspace{.25cm}
+    $Dm(ax) = |a|Dm(x)$
+\end{center}
+
+\subsubsection{Rango}
+
+\noindent Sean $x_1, \dots, x_n$ observaciones de la variable x.El rango de x es
+
+\[
+    R(x) = x_n-x_1
+\]
+
+Propiedades
+
+\begin{center}
+    $R(x+c) = R(x)$ \\
+    \vspace{.25cm}
+    $R(ax) = |a|R(x)$
+\end{center}
+
+\textbf{Ejemplo 13}
+
+Muestra que $var(x+c) = var(x)$
+
+\subsection{Medidas de forma (1.6.5)}
+
+\noindent Sean $x_1, \dots, x_n$ observaciones de la variable x. El k-esimo momento de x es
+
+\[
+    m'_k(x) = \frac{1}{n} \sum_{i=1}^{n}x_i^k
+\]
+
+Mientras que el k-esimo momento central de x es
+
+\[
+    m_k(x) = \frac{1}{n} \sum_{i=1}^{n}(x_i - \bar{x})^k
+\]
+
+\subsubsection{Asimetria}
+
+\noindent El coeficiente de asimetria mide la asimetria de los datos respecto a la media.
+
+\noindent Sean $x_1, \dots, x_n$ observaciones de la variable x. El coeficiente de asimetria de x es
+
+\[
+    sk(x) = \frac{1}{s^3}[\frac{1}{n} \sum_{i=1}^{n}(x_i - \bar{x})^3]
+\]
+
+Donde s es la desviacion estandar de x.
 
 
 

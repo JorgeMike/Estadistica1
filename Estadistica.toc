@@ -1,24 +1,31 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {0.1}Medidas de Tendencia Central}{2}{section.0.1}%
-\contentsline {subsection}{\numberline {0.1.1}Media}{2}{subsection.0.1.1}%
-\contentsline {subsection}{\numberline {0.1.2}Mediana}{2}{subsection.0.1.2}%
-\contentsline {subsection}{\numberline {0.1.3}Moda}{3}{subsection.0.1.3}%
-\contentsline {subsection}{\numberline {0.1.4}Media para una serie de frecuencias}{3}{subsection.0.1.4}%
-\contentsline {subsection}{\numberline {0.1.5}Media para datos agrupados}{3}{subsection.0.1.5}%
-\contentsline {section}{\numberline {0.2}18 Agosto 2023}{5}{section.0.2}%
-\contentsline {subsection}{\numberline {0.2.1}Breve introduccion a latex}{5}{subsection.0.2.1}%
-\contentsline {subsubsection}{Principales clases de documentos}{5}{section*.2}%
-\contentsline {subsubsection}{Paquetes}{5}{section*.3}%
-\contentsline {subsubsection}{Estructura de un documento}{5}{section*.4}%
-\contentsline {subsubsection}{LaTex en linea}{6}{section*.5}%
-\contentsline {subsubsection}{Partes de un documento}{6}{section*.6}%
-\contentsline {subsubsection}{Tamaños de fuente}{6}{section*.7}%
-\contentsline {subsubsection}{Listas numeradas y viñetas}{6}{section*.8}%
-\contentsline {subsubsection}{Alineacion de texto}{6}{section*.9}%
-\contentsline {subsubsection}{Composicion de ecuaciones}{7}{section*.10}%
-\contentsline {subsubsection}{Alinear expresion con algun elemento}{7}{section*.11}%
-\contentsline {subsubsection}{Tablas}{7}{section*.12}%
-\contentsline {subsubsection}{Como insertar una imagen}{7}{section*.13}%
-\contentsline {subsection}{\numberline {0.2.2}Clase}{8}{subsection.0.2.2}%
-\contentsline {section}{\numberline {0.3}21 Agosto 2023}{8}{section.0.3}%
-\contentsline {subsection}{\numberline {0.3.1}Medidas de posición}{8}{subsection.0.3.1}%
+\contentsline {section}{\numberline {1}16 de agosto 2023}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Medidas de Tendencia Central}{3}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Media}{3}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Mediana}{3}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Moda}{4}{subsubsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.2}Media para una serie de frecuencias}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Media para datos agrupados}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {2}18 Agosto 2023}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Breve introduccion a latex}{6}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Principales clases de documentos}{6}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Paquetes}{6}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Estructura de un documento}{6}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}LaTex en linea}{7}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}Partes de un documento}{7}{subsubsection.2.1.5}%
+\contentsline {subsubsection}{\numberline {2.1.6}Tamaños de fuente}{7}{subsubsection.2.1.6}%
+\contentsline {subsubsection}{\numberline {2.1.7}Listas numeradas y viñetas}{7}{subsubsection.2.1.7}%
+\contentsline {subsubsection}{\numberline {2.1.8}Alineacion de texto}{7}{subsubsection.2.1.8}%
+\contentsline {subsubsection}{\numberline {2.1.9}Composicion de ecuaciones}{7}{subsubsection.2.1.9}%
+\contentsline {subsubsection}{\numberline {2.1.10}Alinear expresion con algun elemento}{8}{subsubsection.2.1.10}%
+\contentsline {subsubsection}{\numberline {2.1.11}Tablas}{8}{subsubsection.2.1.11}%
+\contentsline {subsubsection}{\numberline {2.1.12}Como insertar una imagen}{8}{subsubsection.2.1.12}%
+\contentsline {subsection}{\numberline {2.2}Clase}{9}{subsection.2.2}%
+\contentsline {section}{\numberline {3}21 Agosto 2023}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Medidas de posición (1.6.4)}{9}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Cuantiles}{9}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Desviacion estandar}{12}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Desviacion media}{12}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Rango}{12}{subsubsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.2}Medidas de forma (1.6.5)}{13}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Asimetria}{13}{subsubsection.3.2.1}%
