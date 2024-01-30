@@ -1483,4 +1483,1160 @@ entonces
     M_{xi}(t) = e^{\mu_i a_it + \frac{a_i^2 \sigma^2_i t^2}{2}}
 \]
 
+\section{22 de Septiembre del 2023}
+
+\subsection{Distribución de muestreo de $\bar{X}$}
+
+Sea $X_1, \cdots, x_n$ una muestra aleatoria tal que $E(x_i) = \mu$ y $Var(x_i) = \sigma^2$ para $i = 1, \cdots, n$. Entonces
+
+\[
+    E(\bar{X}) = \mu
+\]
+
+\[
+    Var(\bar{X}) = \frac{\sigma^2}{n}
+\]
+
+\textbf{Demostración}
+
+\begin{align*}
+    E(\bar{X}) & = E(\frac{1}{n}\sum_{i=1}^{x_i})        \\
+               & = E(\frac{1}{n}[x_1, \cdots, c_n])      \\
+               & = \frac{1}{n}(E(x_1) + \cdots + E(x_n)) \\
+               & = \frac{1}{n} (\mu + \cdots + \mu)      \\
+               & = \frac{n \mu}{n} = \mu                 \\
+\end{align*}
+
+\begin{align*}
+    Var(\bar{X}) & = Var(\frac{1}{n}\sum_{i=1}^{x_i})             \\
+                 & = Var(\frac{1}{n}[x_1, \cdots, c_n])           \\
+                 & = \frac{1}{n^2}(Var(x_1) + \cdots + Var(x_n))  \\
+                 & = \frac{1}{n^2} (\sigma^2 + \cdots + \sigma^2) \\
+                 & = \frac{n \sigma^2}{n^2} = \frac{\sigma^2}{n}  \\
+\end{align*}
+
+\textbf{Ejemplo 3}
+
+Sea $X_1, \cdots, x_n$ v.a.i.i.d con distribución normal donde $E(x_1) = 3.25$, $E(x_2) = 3.3$, $\sqrt{Var(x_1)} = 0.005$ y $\sqrt{Var(x_2)} = 0.006$
+
+Sea $y = x_2 - x_1$. Calcula $E(y)$ y $Var(y)$
+
+\[
+    E(y) = E(x_2 - x_1) = E(x_2) - E(x_1) = 3.3 - 3.25 = 0.05
+\]
+
+\[
+    Var(y) = Var(x_2 - x_1) = Var(X_2) + Var(x_1) = (0.000061)^2 + (0.005)^2 = 0.000061
+\]
+
+Si $z \sim x_4^2$
+
+$\mathbb{P}(z > 4) = \mathbb{P}(\frac{z-E(z)}{\sqrt{Var(z)}} > \frac{4-E(z)}{\sqrt{Var(z)}}) = \mathbb{P}(\frac{z-4}{\sqrt{8}} > \frac{4-4}{\sqrt{8}}) = \mathbb{P}(x>0)$
+
+\subsection{Teorema central del limite}
+
+Sea $X_1, \cdots, x_n$ una sucesión de v.a.i.i.d. tales que para cada natural n, $E(x_n) = \mu$ y $Var(x_n) = \sigma^2$. Entonces
+
+\[
+    \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}} \sim N(0,1)
+\]
+
+\section{25 de Septiembre del 2023}
+
+\textbf{Ejemplo 4}
+
+Se ha seleccionado una muestra al azar de 50 mujeres de una población de mayores de 18 años. se desconoce la estatura media de la población pero en la muestra observada se obtuvo que $\bar{x} = 1.60$m. Si se sabe por otros estudios que la desviación estandar poblacional es de $0.33$m
+
+Determina la probabilidad de que la media muestral no difiera en más de $0.01$m de la media poblacional.
+
+$\bar{x}$, $E(\bar{x}) = \mu$
+\begin{align*}
+    (\bar{x}) & = \mu
+              & = \bar{x}
+              & = 1.60
+\end{align*}
+
+\begin{align*}
+    \mathbb{P}(|\bar{x} - \mu| < 0.01) & = \mathbb{P}(-0.01 < \bar{x} - \mu < 0.01)                                                                                  \\
+                                       & = \mathbb{P}(\frac{-0.01}{\frac{6}{\sqrt{n}}} < \frac{\bar{x} - \mu}{\frac{6}{\sqrt{n}}} < \frac{0.01}{\frac{6}{\sqrt{n}}}) \\
+                                       & = \mathbb{P}(\frac{-0.01}{\frac{0.033}{\sqrt{50}}} < z < \frac{0.01}{\frac{0.033}{\sqrt{50}}})                              \\
+                                       & = \mathbb{P}(-2.14 < z < 2.14)                                                                                              \\
+                                       & = \mathbb{P}(z< 2.14) - \mathbb{P}(z < -2.14)
+\end{align*}
+
+\subsection{La distribución de muestreo de $s^2$}
+
+Sean $(x_1, y_1) \dots, (x_n, y_n)$ v.a.i.i con distribución normal con media $\mu$ conocida y varianza $\sigma^2$. Entonces
+\[
+    \frac{nS^2_n}{\sigma^2} \sim X_n^2
+\]
+
+Donde
+
+\[
+    S^2_n = \frac{\sum_{i=1}^{n}(x_i-\mu)^2}{n}
+\]
+
+\textbf{Ejemplo 5}
+
+Sean $(x_1, y_1) \dots, (x_n, y_n)$ v.a.i.i con distribución $N(\mu = 10, \sigma^2 = 0.01)$. Calcula la probabilidad de que la varianza muestral sea mayor que $0.014$
+
+\begin{align*}
+    \mathbb{P}(S^2_n > 0.014)                   & = \mathbb{P}(\frac{nS^2_n}{\sigma^2} > \frac{0.014n}{\sigma^2}) \\
+                                                & = \mathbb{P}(X^2_n > \frac{0.014}{0.01}n)                       \\
+    \text{Si} n=25                                                                                                \\
+    \mathbb{P}(X^2_25 > \frac{0.014(25)}{0.01}) & = \mathbb{P}(X^2_{25} > 35)                                     \\
+                                                & = 1 - \mathbb{P}(X^2_n < 35)                                    \\
+\end{align*}
+
+En r 1 - pchisq(35,25) = 0.088203
+
+\subsection{Aproximación normal}
+\[
+    \mathbb{P}(X^2_n > 35)
+\]
+
+\section{27 de Septiembre del 2023}
+
+\subsection{Estimacion puntual y por intervalos}
+
+estimador $neq$ Estimacion
+
+\subsection{Propiedades de los estimadores}
+
+\textbf{Definición} Un estimador $\theta$ del parametro $\theta$ se dice que es insesgado si $E(\hat{\theta}) = \theta$
+
+\textbf{Ejemplo 2}
+
+Define el espacio parametral de las siguientes Distribuciones
+\[
+    Exp(\lambda), H = (0, \infty)
+\]
+\[
+    N(\mu, \sigma^2), H = (-\infty, \infty) x (0, \infty)
+\]
+
+\textbf{Definición}
+Un estadístico $\theta_n $ basado en una muestra de tamano n es un estimador asintotico insesgado para el parametro $\theta$ si
+\[
+    lim_{n \rightarrow \infty} E(\theta_n) = \theta
+\]
+
+\[
+    \mathbb{P}(z \leq 0.41) = 0.6591
+\]
+
+\textbf{Definición}. Sea $\hat{\theta_n}$ un estimador para el parametro $\theta$, basado en una muestra de tamaño n, $\hat{theta_n}$ es consistente si para cualquier $\epsilon > 0$
+
+\section{2 de Octubre del 2023}
+
+\subsection{Métodos para obtener estimadores puntuales}
+
+\subsubsection{Método de momentos}
+
+Consiste en igualar los momentos poblacionales con los correspondientes momentos muestrales y resolver esta ecuación o sistema de ecuaciones para el parámetro o vector de párametros desconocidos.
+
+\[
+    E(x) \backsimeq \frac{1}{n} \sum_{i=1}^{n} x_i = \bar{x}
+\]
+\[
+    E(x^2) = \frac{1}{n} \sum_{i=1}^{n}x_i^2
+\]
+
+Si $X$ es una v.a continua
+\[
+    E(x^j) = \int_{-\infty}^{\infty} x^j f(x)dx
+\]
+
+Por ejemplo, si $X \backsim N(\mu, \sigma^2)$
+
+\[
+    E(x) = \mu
+\]
+
+\textbf{Ejemplo 4}
+
+Sea $X$ una variable aleatoria con funcion de densidad
+
+\[
+    f(x) = \begin{cases}
+        \theta x^{\theta - 1} & \text{si } 0 \leq x \leq 1 \\
+        0                     & \text{eoc }
+    \end{cases}
+\]
+
+Utiliza el metodo de momentos para estimar $\theta$
+
+\begin{align*}
+    E(x) & = \int_{-\infty}^{\infty} xf(x) dx                        \\
+         & = \int_{-1}^{1}x \theta x^{\theta - 1}                    \\
+         & = \int_{-1}^{1}\theta x^\theta dx                         \\
+         & = \frac{\theta}{\theta + 1}x^{\theta + 1} \bigg|_{-1}^{1} \\
+         & = \frac{\theta}{\theta + 1}
+\end{align*}
+
+Por lo tanto
+
+\[
+    \frac{\hat{\theta}}{\hat{\theta} + 1} = \bar{x}
+\]
+
+\[
+    \hat{\theta} = \frac{\bar{x}}{1 - \bar{x}}
+\]
+
+\textbf{Ejemplo 5}
+
+Sea $X_1, \cdots X_n$ una muestra aleatoria con distribución $N(\mu, \sigma^2)$ usa el metodo de momentos para estimar $\mu$ y $\sigma^2$
+
+\[
+    E(x) = \frac{1}{n} \sum x_i
+\]
+
+\[
+    E(x^2) = \frac{1}{n} \sum x_i^2
+\]
+
+\[
+    \mu = \bar{x}
+\]
+
+Por otro lado
+
+\begin{align*}
+    E(x^2) & = var(x) + E(x^2)                     \\
+           & = \sigma^2 + \mu^2                    \\
+           & = \int_{-\infty}^{\infty} x^2 f(x) dx \\
+\end{align*}
+
+\begin{align*}
+    \hat{\sigma^2} + \hat{\mu^2} & = \frac{1}{n} \sum x_i                        \\
+    \hat{\sigma^2} + \bar{x}^2   & = \frac{1}{n} \sum x_i                        \\
+    \sigma^2                     & = \frac{1}{n}\sum x_i - \bar{x}^2             \\
+    \sigma^2                     & = \frac{1}{n} \sum_{i=1}^{n}(x_i - \bar{x})^2
+\end{align*}
+
+Insertar imagen del 2 de Octubre
+
+Insertar ejemplo 6
+
+\section{4 de Octubre del 2023}
+
+\textbf{Ejemplo 7}
+
+\[
+    L(\beta | x) = \prod_{i=1}^{n} f(x_i | \beta)
+\]
+
+\[
+    = \frac{1}{\beta^n} e^{-\sum x_i / \beta}
+\]
+
+\begin{align*}
+    \log[L(\beta | x)] & = \log[\frac{1}{\beta^n} e^{-\sum x_i / \beta}]         \\
+                       & = \log[\frac{1}{\beta^n}] + \log[e^{-\sum x_i / \beta}] \\
+                       & = \log[\beta^{-n}] - \frac{\sum x_i}{\beta}             \\
+                       & = -n\log(\beta) - \sum x_i \beta^{-1}                   \\
+\end{align*}
+
+\textbf{Ejemplo 8}
+
+Sea $X_1, \cdots X_2$ una m.a que se distribuye como una $N(\mu, \sigma^2)$. Utiliza ek método de máxima verisimilitud para encontrar $\hat{\mu}$, $\hat{\sigma^2}$
+
+\begin{align*}
+    L(\mu,\sigma^2 |x) & = \prod_{i=1}^{n}f(\mu, \sigma^2 | x_i)                                                \\
+                       & = \prod_{i=1}^{n}\frac{1}{\sqrt{2\pi \sigma^2}} e^{\frac{-(x_i - \mu)^2}{2\sigma^2}}   \\
+                       & = \prod_{i=1}^{n} (2 \pi \sigma^2)^{-\frac{1}{2}} e^{\frac{-(x_i - \mu)^2}{2\sigma^2}} \\
+                       & = (2\pi \sigma)^{-\frac{n}{2}} e^{-\frac{\sum(x_i - \mu)^2}{2\sigma^2}}
+\end{align*}
+
+\begin{align*}
+    \log[L(\mu,\sigma^2 |x)] & = \log\left[(2\pi \sigma)^{-\frac{n}{2}} e^{-\frac{\sum(x_i - \mu)^2}{2\sigma^2}}\right]                      \\
+                             & = \log\left[(2\pi \sigma^2)^{-\frac{n}{2}}\right] + \log\left[e^{-\frac{\sum(x_i - \mu)^2}{2\sigma^2}}\right] \\
+                             & = -\frac{n}{2} \log(2\pi \sigma^2) - \frac{\sum(x_i - \mu)^2}{2\sigma^2}.
+\end{align*}
+
+\[
+    \frac{d \log[L(\mu,\sigma^2 |x)]}{d\mu}
+\]
+Para resolver la derivada con respecto a \( \mu \) de la log-verosimilitud de una distribución normal, primero recordemos la expresión para \( \log[L(\mu,\sigma^2 |x)] \):
+
+\[
+    \log[L(\mu,\sigma^2 |x)] = -\frac{n}{2} \log(2\pi \sigma^2) - \frac{\sum(x_i - \mu)^2}{2\sigma^2}
+\]
+
+Ahora, vamos a derivar con respecto a \( \mu \):
+
+\[
+    \frac{d \log[L(\mu,\sigma^2 |x)]}{d\mu} = \frac{d}{d\mu} \left(-\frac{n}{2} \log(2\pi \sigma^2) - \frac{\sum(x_i - \mu)^2}{2\sigma^2}\right)
+\]
+
+El primer término, \( -\frac{n}{2} \log(2\pi \sigma^2) \), no depende de \( \mu \), por lo que su derivada es 0.
+
+El segundo término, centrémonos en derivar \( -\frac{\sum(x_i - \mu)^2}{2\sigma^2} \) con respecto a \( \mu \):
+
+\[
+    \frac{d}{d\mu} \left(-\frac{\sum(x_i - \mu)^2}{2\sigma^2}\right) = -\frac{1}{2\sigma^2} \sum 2(x_i - \mu)(-1) = \frac{\sum(x_i - \mu)}{\sigma^2}
+\]
+
+Por lo tanto, la derivada de la log-verosimilitud con respecto a \( \mu \) es:
+
+\[
+    \frac{d \log[L(\mu,\sigma^2 |x)]}{d\mu} = \frac{\sum(x_i - \mu)}{\sigma^2}
+\]
+
+Esta derivada nos da la tasa de cambio de la log-verosimilitud con respecto a \( \mu \). Para encontrar el valor de \( \mu \) que maximiza la log-verosimilitud (y, por lo tanto, la verosimilitud), podemos resolver para \( \mu \) cuando esta derivada es igual a cero. Este proceso nos dará el estimador de máxima verosimilitud (MLE) para \( \mu \) en una distribución normal.
+
+\[
+    \begin{cases}
+        \frac{\sum(x_i - \hat{\mu})}{\sigma^2} = 0 \\
+        -\frac{n}{2\sigma^2} + \frac{\sum (x_i - \mu)^2}{2(\sigma^2)^2} = 0
+    \end{cases}
+\]
+
+Vamos a resolver el sistema de ecuaciones que nos has dado paso a paso.
+
+Dadas las ecuaciones: \\
+1) \[\frac{\sum(x_i - \hat{\mu})}{\sigma^2} = 0\]
+2) \[-\frac{n}{2\sigma^2} + \frac{\sum (x_i - \mu)^2}{2(\sigma^2)^2} = 0\]
+
+**Resolviendo la primera ecuación:**
+De la ecuación (1), tenemos:
+\[ \sum(x_i - \hat{\mu}) = 0 \]
+Sumando todos los \( x_i \) y reorganizando los términos, tenemos:
+\[ \sum x_i = n\hat{\mu} \]
+De aquí, podemos deducir que:
+\[ \hat{\mu} = \frac{\sum x_i}{n} \]
+Esto es simplemente el promedio de los valores de \( x_i \).
+
+**Resolviendo la segunda ecuación:**
+La ecuación (2) es:
+\[ -\frac{n}{2\sigma^2} + \frac{\sum (x_i - \mu)^2}{2(\sigma^2)^2} = 0 \]
+Multiplicando todo por \(2(\sigma^2)^2\):
+\[ -n\sigma^2 + \sum (x_i - \mu)^2 = 0 \]
+Reorganizando, obtenemos:
+\[ \sum (x_i - \mu)^2 = n\sigma^2 \]
+Dividimos ambos lados por \( n \):
+\[ \frac{\sum (x_i - \mu)^2}{n} = \sigma^2 \]
+
+Aquí, \(\sigma^2\) es simplemente la varianza de los valores de \( x_i \).
+
+Por lo tanto, las soluciones para el sistema de ecuaciones son:
+\[ \hat{\mu} = \frac{\sum x_i}{n} \]
+\[ \sigma^2 = \frac{\sum (x_i - \mu)^2}{n} \]
+
+\textbf{Teorema Cota inferior de Cramér-Rao}
+
+Sea $X_1, \cdots X_n \backsim f(x | \theta)$, $\theta \in $
+Sea $T$ un estimador de $\theta$ y
+
+\[
+    Var(T) \geq \frac{1}{nE[\frac{d \log(f(x|\theta))}{d\theta}]^2}
+\]
+
+Si $T$ es insesgado para $\theta$ y $Var(T) = CICR((\theta))$. $T$ es UMVUE (Estimador, insesgado de minima varianza)
+
+\textbf{Ejemplo 9}
+
+Calcula el $CICR(\theta)$ para el modelo Bernoulli\\
+
+Recordemos que una variable aleatoria \( X \) sigue una distribución Bernoulli con parámetro \( \theta \) si su función de masa de probabilidad (fmp) es:
+
+\[ P(X=k|\theta) = \theta^k (1-\theta)^{1-k} \]
+
+para \( k \in \{0,1\} \) y \( 0 < \theta < 1 \).
+
+Para calcular la Cota Inferior de Cramér-Rao, primero necesitamos encontrar la información de Fisher \( I(\theta) \). La información de Fisher para una muestra es:
+
+\[ I(\theta) = E\left[ \left(\frac{\partial \ln f(X;\theta)}{\partial \theta}\right)^2 \right] \]
+
+Calculemos primero la derivada del logaritmo de la fmp respecto de \( \theta \).
+
+Dada:
+\[ \ln f(X | \theta) = \ln(\theta^x) + \ln((1-\theta)^{1-x}) \]
+\[ \ln f(X | \theta) = x \ln(\theta) + (1-x) \ln(1-\theta) \]
+
+Derivando con respecto a \( \theta \) obtenemos:
+
+\[ \frac{\partial \ln f(X|\theta)}{\partial \theta} = \frac{x}{\theta} - \frac{1-x}{1-\theta} \]
+
+Elevando al cuadrado esta derivada:
+
+\[ \left( \frac{\partial \ln f(X|\theta)}{\partial \theta} \right)^2 = \left(\frac{x}{\theta} - \frac{1-x}{1-\theta}\right)^2 \]
+Pedirle a chatgpt concluir
+El profe conluyo $CICR(\theta) = \frac{\theta(1-\theta)}{n}$
+
+\textbf{Ejemplo 10}
+
+Muestar que $\hat{\theta} = \bar{x}$ es UMVUE para una m.a con distribucion $Bern(\theta)$
+
+\section{11 de Octubre del 2023}
+
+\textbf{Ejemplo}
+
+Muestra que la media muestral es UMVUE para el parametro $\beta$ de una exponencial
+
+Cuota inferior de Cramér-Rao
+
+\[CICR(\theta) = \frac{1}{nE\left[\frac{d[Ln(f(X|\theta))]}{d\theta}\right]^2}\]
+
+Funcion de dednsidad exponencial
+
+\[f(x|\beta) = \frac{1}{\beta}e^{-x/\beta}\]
+
+Primero, calculemos el logaritmo de esta función:
+
+\[\ln\left(\frac{1}{\beta}e^{-\frac{x}{\beta}}\right) = -\ln(\beta) - \frac{x}{\beta}\]
+
+Ahora, calculamos su derivada con respecto de $\beta$
+
+\begin{align*}
+    E\left[\frac{d Log(f(x|\beta))}{d\beta}\right]^2 & = E\left[-\frac{1}{\beta} + \frac{x}{\beta^2}\right]^2                       \\
+                                                     & = E\left[\frac{x}{\beta^2} - \frac{1}{\beta}\right]^2                        \\
+                                                     & = E\left[\frac{x^2}{\beta^4} - \frac{2x}{\beta^3} + \frac{1}{\beta^2}\right]
+\end{align*}
+
+Sabemos que
+
+\[Var(x) = \beta^2 \hspace*{1cm} E(x) = \beta\]
+
+Entonces al distribuir la esperanza tenemos:
+
+Nota: $\beta$ es una constante por lo tanto solo no fijamos en $x$
+
+\[\frac{E[x^2]}{\beta^4} - \frac{E[2x]}{\beta^3} + \frac{1}{\beta^2}\]
+
+para calcular $E[x^2]$ podemos observar la varianza y despejar el valor de $E[x^2]$
+
+\begin{align*}
+    Var(x) & = E[x^2] - E^2[x] = \beta^2  \\
+           & = E[x^2] - \beta^2 = \beta^2 \\
+           & = E[x^2] = 2\beta^2
+\end{align*}
+
+por lo tanto
+
+\[\frac{2\beta^2}{\beta^4} - \frac{2\beta}{\beta^3} + \frac{1}{\beta^2} = \frac{1}{\beta^2}\]
+
+\[CIRC(\beta) = \frac{1}{n\frac{1}{\beta^2}} = \frac{\beta^2}{n}\]
+
+\begin{align*}
+    E(\bar{x}) & = E(\frac{1}{n} \sum_{i=1}^{n} x_i)                 \\
+               & = \frac{1}{n} E(x_1 + \cdots + x_n)                 \\
+               & = \frac{1}{n} \left[E(x_1) + \cdots + E(x_n)\right] \\
+               & = \frac{1}{n} [n\beta]                              \\
+               & = \beta
+\end{align*}
+
+\begin{align*}
+    Var(\bar{x}) & = Var(\frac{1}{n} \sum_{i=1}^{n} x_i)                 \\
+                 & = \frac{1}{n^2} Var(x_1 + \cdots +  x_n)              \\
+                 & = \frac{1}{n^2} \left[Var(x_1) \cdots Var(x_n)\right] \\
+                 & = \frac{1}{n^2} [n\beta^2]                            \\
+                 & = \frac{\beta^2}{n}
+\end{align*}
+
+Como $\bar{x}$ es insesgada y $Var(\bar{x}) = \frac{\beta^2}{n} = CIRC(\beta)$, entonces $\bar{X}$ es UMVUE
+
+\section{13 de Octubre del 2023}
+
+\textbf{Teorema de factorizacion}
+Un estadistico $T = \tau(X_1, \cdots, X_n)$es suficiente para $\theta$ si y solo si, $L(\theta|X)$ se puede escribir como
+
+\[g(T(X|\theta))h(X)\]
+
+\textbf{Ejemplo 12}
+
+Muestra que $T = \sum_{i=1}^{n}x_i$ es suficiente para $f(X|\theta) = \theta^x(1-\theta)^{1-x}$
+
+\begin{align*}
+    L(\theta | x) & = \prod_{i=1}^{n}f(x_i|\theta)
+\end{align*}
+
+\newpage
+
+\section{16 de octubre del 2023}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{Imagen16.png}
+    \label{fig:imagen16}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{Imagen17.png}
+    \label{fig:imagen17}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{Imagen18.png}
+    \label{fig:imagen18}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{Imagen19.png}
+    \label{fig:imagen19}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{Imagen20.png}
+    \label{fig:imagen20}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{Imagen21.png}
+    \label{fig:imagen21}
+\end{figure}
+
+\clearpage
+
+Primero, identificamos los datos: \\
+
+\noindent \( n_1 \) = número de hombres = 140 \\
+\( n_2 \) = número de mujeres = 150 \\
+\( x_1 \) = número de hombres que usan lentes = 56 \\
+\( x_2 \) = número de mujeres que usan lentes = 27 \\
+
+De aquí, podemos encontrar las proporciones muestrales:
+
+\[ x_1 = \frac{x_1}{n_1} = \frac{56}{140} = 0.4 \]
+\[ x_2 = \frac{x_2}{n_2} = \frac{27}{150} = 0.18 \]
+
+La diferencia de proporciones muestrales es:
+\[ x_1 - x_2 = 0.4 - 0.18 = 0.22 \]
+
+Para un intervalo de confianza del 95\%, \( z \) es aproximadamente 1.96 (dado que \( z \) sigue una distribución normal estándar).
+
+\[
+    q_z(1 - \frac{\alpha}{2}) = q_z(1 - \frac{1 - 0.95}{2})
+\]
+
+\[
+    q_z(1 - \frac{0.05}{2}) = q_z(1 - 0.025)
+\]
+
+\[
+    q_z(0.975) = 1.96
+\]
+
+Esto se sabe por la tabla z
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Imagen22.png}
+    \label{fig:imagen22}
+\end{figure}
+
+\clearpage
+
+Usando la fórmula dada:
+\[ \bar{X}_1 - \bar{X}_2 \pm q_z(1 - \frac{\alpha}{2}) \sqrt{\frac{\bar{X}_1(1-\bar{X}_1)}{n_1} + \frac{\bar{X}_2(1-\bar{X}_2)}{n_2}} \]
+
+Calculamos el margen de error:
+\[ ME = 1.96 \sqrt{\frac{0.4(1-0.4)}{140} + \frac{0.18(1-0.18)}{150}} \]
+\[ ME = 1.96 \sqrt{\frac{0.24}{140} + \frac{0.1476}{150}} \]
+\[ ME \approx 1.96(0.0415) \]
+\[ ME \approx 1.96(0.0415) \]
+\[ ME \approx 0.08134 \]
+
+Ahora que tenemos el margen de error (ME), podemos calcular el intervalo de confianza para la diferencia de proporciones:
+
+Límite inferior (LI):
+\[ LI = x_1 - x_2 - ME \]
+\[ LI = 0.22 - 0.08134 \]
+\[ LI \approx 0.13866 \]
+
+Límite superior (LS):
+\[ LS = x_1 - x_2 + ME \]
+\[ LS = 0.22 + 0.08134 \]
+\[ LS \approx 0.30134 \]
+
+Por lo tanto, el intervalo de confianza del 95\% para la diferencia de las proporciones reales de hombres y mujeres que usan lentes en la población es:
+
+\[ (0.13866, 0.30134) \]
+
+Esto significa que, con un 95\% de confianza, la diferencia real entre las proporciones de hombres y mujeres que usan lentes se encuentra en el rango de 13.866\% a 30.134\%.
+
+\newpage
+
+\textbf{Ejemplo 1}
+Se elabora un examen de 10 preguntas de opcion multiple. Cada pregunta tieme cinco posibles respuestas. Calcula $\alpha$ y $\beta$
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagen23.png}
+    \label{fig:imagen23}
+\end{figure}
+
+\section{20 de octubre del 2023}
+
+\textbf{Ejemplo 3}
+
+Considera una muestra aleatoria de una normal. Usa el lema de Neyman-Pearson y encuentra la mejor región crítica para la prueba de hipótesis:
+\[
+    H_0 : \mu = \mu_0 \text{ contra } H_1 : \mu = \mu_1
+\]
+
+\textbf{Lema de Neyman-Pearson:}
+
+Para la prueba de hipótesis:
+\[
+    H_0 : \theta = \theta_0 \text{ contra } H_1 : \theta = \theta_1
+\]
+La mejor región crítica de tamaño \(\alpha\) es de la forma:
+\[
+    C = \left\{ (x_1, \ldots, x_n) \bigg| \frac{L(\theta_0|x)}{L(\theta_1|x)} < k \right\}
+\]
+con \(k\) una constante positiva.
+
+Si \(X_i \sim N(\mu, \sigma^2)\)
+\[
+    L(\mu_0, \sigma^2|x) = \prod_{i=1}^{n} f(x_i | M_0, \sigma^2)
+\]
+\[
+    L(\mu_0, \sigma^2|x) = \prod_{i=1}^{n} \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x_i-\mu_0)^2}{2\sigma^2}}
+\]
+
+\begin{align*}
+                         & = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x_1-\mu_0)^2}{2\sigma^2}} \cdots \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x_n-\mu_0)^2}{2\sigma^2}}                                      \\
+                         & = \frac{1}{\sqrt{2\pi\sigma^2}} \cdots \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x_1-\mu_0)^2}{2\sigma^2}} \cdots \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x_n-\mu_0)^2}{2\sigma^2}} \\
+                         & = \left(2\pi\sigma^2\right)^{-\frac{n}{2}} e^{-\frac{\sum(x_i - \mu_1)^2}{2\sigma^2}}                                                                                               \\
+    L(\mu_0, \sigma^2|x) & = \left(2\pi\sigma^2\right)^{-\frac{n}{2}} e^{-\frac{\sum_{i=1}^{n}(x_i-\mu_0)^2}{2\sigma^2}}                                                                                       \\
+    L(\mu_1, \sigma^2|x) & = \left(2\pi\sigma^2\right)^{-\frac{n}{2}} e^{-\frac{\sum_{i=1}^{n}(x_i-\mu_1)^2}{2\sigma^2}}                                                                                       \\
+                         & = e^{-\frac{\sum(x_i - \mu_0)^2}{2\sigma^2}} + \frac{\sum(x_i-\mu_1)^2}{2\sigma^2}
+\end{align*}
+
+\begin{align*}
+    e \left( \frac{\mu_0 - \mu_1}{\sigma} \right) \sum x_i & < k_1                                                                                 \\
+    e (\mu_0 - \mu_1) \sum x_i                             & < \ln(k_1)                                                                            \\
+    \frac{\mu_0 - \mu_1}{\sigma^2} \sum x_i                & < k_3                                                                                 \\
+    \text{Si} \quad \mu_0 - \mu_1                          & > 0 \Rightarrow \mu_0 > \mu_1                                                         \\
+    P(\text{error tipo 1})                                 & = P(\bar{X} \leq c | \mu = \mu_0)                                                     \\
+                                                           & = P \left( \frac{n(\bar{X} - \mu_1)}{\sigma} \leq \frac{n(c - \mu_1)}{\sigma} \right) \\
+                                                           & = P \left( Z_c < q_z(\alpha) \right) = \alpha                                         \\
+    \text{Si} \quad \mu_0 - \mu_1                          & < 0 \Rightarrow \mu_0 < \mu_1                                                         \\
+    P(\text{error tipo 1})                                 & = P(\bar{X} > c | \mu = \mu_1)                                                        \\
+                                                           & = P \left( Z_c > q_z(1 - \alpha) \right) = \alpha                                     \\
+\end{align*}
+
+\section{23 de Octubre del 2023}
+
+\textbf{Ejemplo 6}
+
+Para evitar la contaminación ambiental producida por el consumo excesivo e innecesario de gasolina, se realiza un estudio para determinar si el motor del modelo nuevo es más rendidor que el del modelo viejo. Para ello, se eligieron 50 autos con este motor y en una prueba se obtuvo un promedio 18.9 km por litro. Además, se tiene la certeza que la desviación estándar es 4 km. Estos datos confirman que el nuevo motor tiene un rendimiento superior a 17.5 km por litro? Usa un nivel de significancia igual a 0.025.
+
+\[
+    \begin{cases}
+        H_0: m = 17.5 \\
+        H_1: m > 17.5
+    \end{cases}
+\]
+
+\begin{tabular}{|c|c|c|}
+    \hline
+    Prueba               & Rc $\sigma^2$ conocida & Rc $\sigma^2$ desconocida \\
+    \hline
+    $H_1 : \mu > H_0$    & $Zc > Z(1-\alpha)$     & $tc > t(1-\alpha)$        \\
+    $H_1 : \mu < H_0$    & $Zc < Z(\alpha)$       & $tc < t(\alpha)$          \\
+    $H_1 : \mu \neq H_0$ & $|Zc| > Z(1-\alpha/2)$ & $|tc| > t(1-\alpha/2)$    \\
+    \hline
+\end{tabular}
+
+\vspace{0.2cm}
+
+\noindent Cuando una variable aleatoria $X$ se distribuye como una $N(\mu,\sigma^2)$ y la hipótesis nula es $H_0 : \mu = \mu_0$ y el lema de Newman-Pearson indica que las dos posibles realizaciones de prueba son:
+
+$Z_c = \frac{\sqrt{n}(\overline{X} - \mu_0)}{\sigma}$ cuando $\sigma$ es conocida, $Z_c \sim N(0,1)$
+
+$t_c = \frac{\sqrt{n}(\overline{X} - \mu_0)}{s}$ cuando $\sigma$ es desconocida, $t_c \sim t_{n-1}$
+
+\vspace{0.2cm}
+
+\textbf{Datos proporcionados}\\
+- \( n = 50 \) (número de autos)\\
+- \( \overline{X} = 18.9 \) (promedio de kilometraje por litro)\\
+- \( \sigma = 4 \) (desviación estándar)\\
+- \( \mu_0 = 17.5 \) (valor hipotético para la media bajo \( H_0 \))\\
+- \( \alpha = 0.025 \) (nivel de significancia)\\
+
+\textbf{Cálculo del estadístico de prueba}\\
+
+Ya que se conoce la desviación estándar (\( \sigma \)), utilizaremos el estadístico Z. La fórmula para calcular el estadístico Z en este caso es:\\
+
+\[
+    Z_c = \frac{\sqrt{n}(\overline{X} - \mu_0)}{\sigma}
+\]
+
+Sustituimos los valores:
+
+\[
+    Z_c = \frac{\sqrt{50}(18.9 - 17.5)}{4} = 2.4748
+\]
+
+\section{6 de Noviembre del 2023}
+
+\textbf{Pendientes}
+
+\begin{itemize}
+    \item Cuarto parcial ( + cuestionario ) 17 de noviembre
+    \item Tarea 4 en equipos 16 de noviembre
+    \item Cuestionario ( Muestreo ) 22 de noviembre
+    \item Práctica en SAS ( Muestreo ) 22 de noviembre
+\end{itemize}
+
+\textbf{Solucion del examen}
+
+\[Y_n = \sum_{N}^{i=1}x^2_i\]
+
+\[x_i \sim N(0,1)\]
+
+a)
+
+\[Y_n  \sim X^{(n)}_2\]
+
+\[M_{y_n} (t) = (1-2t)^{^{\frac{-n}{2}}}\]
+
+\begin{align*}
+    E(Y_n) & = \frac{dM_{Y_n}(t)}{dt} \big|_{t=0}                      \\
+           & = \frac{d(1-2t)^{\frac{-n}{2}}}{dt} \big|_{t=0}           \\
+           & = - \frac{n}{2} (1-2t)^{-\frac{n}{2} - 1}(-2) \big|_{t=0} \\
+           & = n(1-2t)^{-\frac{n}{2} -1} \big|_{t=0}                   \\
+           & = n
+\end{align*}
+
+\begin{align*}
+    Var(Y_n) & = E(y^2_n) - E^2(Y_n)
+             & = E(Y^2_n) - n^2
+\end{align*}
+
+\begin{align*}
+    E(Y^2_n) & = \frac{dM_{Y_n}t}{d^2t} \big|_{t=0}                     \\
+             & = \frac{dn(1-2t)^{-\frac{n}{2} - 1}}{dt} \big|_{t=0}     \\
+             & = n(\frac{n}{2} + 1)(1-2t)^{- \frac{n}{2}-2} \big|_{t=0} \\
+             & = n^2 + 2n
+\end{align*}
+
+\begin{align*}
+    Var(Y_n) & = E(Y^2_n) - E^2(Y_n) \\
+             & = n^2 + 2n -2n^2      \\
+             & = 2n
+\end{align*}
+
+b)
+
+\begin{align*}
+    \mathbb{P}(Y_{100} > 100) & = \mathbb{P}\left(\frac{(Y_{100}) - E(Y_{100})}{\sqrt{Var(Y_{100})}} > \frac{100 - E(Y_{100})}{\sqrt{var(Y_{100})}}\right)
+    P                         & = (z > \frac{100 - 100}{\sqrt{200}})
+    P                         & = (z > 0)
+                              & = 0.5
+\end{align*}
+
+3)
+
+\[
+    f(x) = \begin{cases}
+        18/38 & \text{si } x = 1  \\
+        20/38 & \text{si } x = -1
+    \end{cases}
+\]
+
+\[Y_n \sum_{i=1}^{n}x_i\]
+
+Imagen del 6 de noviembre 08:44
+
+\[E(Y_{100} = 100E(x_i))\]
+\[ = 100(-2/38)\]
+\[var(y_100) = 100 (1440/14444)\]
+
+\section{10 de Noviembre del 2023}
+
+\textbf{Ejemplo 1}
+
+\[Var(\hat{\theta}) = |0.4|\]
+
+\textbf{Ejemplo 3}
+
+\[(69.3275, 1306725)\]
+
+\textbf{Ejemplo 4}
+
+\[ n = \frac{s^2 z^{2}_{1 - \frac{\alpha}{2}}}{\epsilon^2 + \frac{s^2}{N} z^{2}_{1 - \frac{\alpha}{2}}} \]
+
+\subsection{Muestreo aleatorio estratificado}
+
+Cuando la población de tamaño $n$ es heterogénea, se divide en $H$ subpoblaciones que se llamarían estratos.
+
+En cada estrato, los elementos son homogéneos entre sí. En este caso, para cada estrato se utiliza $N_h$ para representar el número de elementos de cada estrato, por lo tanto:
+\[ N = N_1 + \cdots + N_H \]
+Se extrae una muestra de cada estrato $h$, donde $x_{ih}$ es el valor i-ésimo del estrato $h$ de la variable de interés $X$.
+
+\textbf{Notacion}
+
+\[w_h = \frac{N_h}{N} \text{ proporcion de elementos del estrato h}\]
+
+\[s^2_h = \text{varianza del estrato h} \]
+
+\[\bar{X}_h = \text{promedio del estrato h} \]
+
+\[w_1 + \cdots + w_h = \frac{N_1}{N} + \frac{N_2}{N} + \cdots + \frac{N_H}{N}\]
+
+
+1. Promedio
+
+\[ \bar{X}_s = \sum_{h=1}^{H} W_h \cdot \bar{X_h} \]
+
+2. Proporción:
+
+\[ \bar{P}_s = \sum_{h=1}^{H} W_h \cdot P_h \]
+
+3. Total:
+\[ T_s = \sum_{i=1}^{H} N_h \cdot \bar{X_h} \]
+
+4. Para la varianza:
+\[ Var(\hat{\theta}) = \sum_{i=1}^{H} W^2_h(1-\frac{n_h}{N_h})\frac{S^2_h}{n_h} \]
+
+Mejor pegar foto del 10 de Noviembre
+
+\textbf{Ejemplo 5}
+
+Para la siguiente muestra aleatoria estratificada:
+
+\begin{center}
+    \begin{tabular}{ c c c c c }
+        Estrato & \(N_h\) & \(W_h\) & \(\bar{X}_h\) & \(S_h^2\) \\
+        \hline
+        A       & 98      & 0.249   & 240           & 6826.6    \\
+        B       & 98      & 0.249   & 507.4         & 23749     \\
+        C       & 98      & 0.249   & 861.7         & 42453.0   \\
+        D       & 99      & 0.253   & 1716.1        & 152099.6  \\
+    \end{tabular}
+\end{center}
+
+Calcula \(\bar{X}_s\) y \(Var(\bar{X}_s)\), donde \(n_h=10\) para cada estrato.
+
+\textbf{Ejemplo 5 - Resolución paso a paso}
+
+\[
+    \bar{X}_s = \sum_{h=1}^{H} W_h \bar{X}_h
+\]
+
+Entonces
+
+\[
+    \bar{X}_s = (0.249 \times 240) + (0.249 \times 507.4) + (0.249 \times 861.7) + (0.253 \times 1716.1)
+\]
+
+Calculando los productos y sumándolos, obtenemos:
+
+\[
+    \bar{X}_s = (59.76) + (126.3426) + (214.7623) + (434.1733) = 834.8392
+\]
+
+Para la varianza de \(\bar{X}_s\):
+
+\[
+    Var(\bar{X}_s) = \sum_{h=1}^{H} \left(\frac{W_h^2 S_h^2}{n_h}\right)
+\]
+
+Sustituyendo los valores tenemos:
+
+\[
+    Var(\bar{X}_s) = \left(\frac{0.249^2 \times 6826.6}{10}\right) + \left(\frac{0.249^2 \times 23749}{10}\right) + \left(\frac{0.249^2 \times 42453.0}{10}\right) + \left(\frac{0.253^2 \times 152099.6}{10}\right)
+\]
+
+Y calculamos cada término para obtener:
+
+\[
+    Var(\bar{X}_s) = (4.0840254) + (14.7430254) + (26.3530254) + (96.578876) = 142.6.358952
+\]
+
+\section{hh}
+
+El problema 1 trata sobre estadísticas e hipótesis de prueba con respecto a la diferencia en la estatura promedio entre mujeres y hombres. Vamos a resolverlo paso a paso:
+
+Parte (a)
+Se nos pide construir un intervalo de confianza del 95% para la diferencia de medias \( \mu_X - \mu_Y \), donde \( X \) es la estatura de las mujeres y \( Y \) la de los hombres. 
+
+Para esto, utilizamos la fórmula del intervalo de confianza para la diferencia de dos medias, cuando las varianzas son conocidas y las muestras son grandes (mayor a 30), lo cual nos permite aplicar el teorema del límite central y usar la distribución Z.
+
+La fórmula es:
+
+\[ IC = (\bar{X} - \bar{Y}) \pm Z_{\alpha/2} \cdot \sqrt{\frac{\sigma_X^2}{n_X} + \frac{\sigma_Y^2}{n_Y}} \]
+
+Donde:
+- \( \bar{X} = 169 \) cm y \( \bar{Y} = 175 \) cm son las medias muestrales.
+- \( \sigma_X = \sigma_Y = 5 \) son las desviaciones estándar poblacionales.
+- \( n_X = n_Y = 100 \) son los tamaños de las muestras.
+- \( Z_{\alpha/2} \) es el valor crítico de Z para un intervalo de confianza del 95%, que es aproximadamente 1.96.
+
+Vamos a calcular el intervalo de confianza utilizando estas fórmulas.
+
+Parte (b)
+Luego, debemos concluir si tenemos suficiente evidencia para decir que la estatura promedio de las mujeres es menor que la de los hombres. Para esto, evaluaremos si el intervalo de confianza incluye el 0 o no. Si no incluye el 0, entonces hay suficiente evidencia para afirmar que existe una diferencia significativa en las medias poblacionales.
+
+Voy a calcular esto ahora.
+
+Parece que hay un problema técnico con la herramienta de código en este momento, así que no puedo calcular el intervalo de confianza en este instante. Sin embargo, puedo mostrarte cómo realizar los cálculos manualmente.
+
+Para calcular el intervalo de confianza para la diferencia de medias con un nivel de confianza del 95%, la fórmula es:
+
+\[ IC = (\bar{X} - \bar{Y}) \pm Z_{\alpha/2} \cdot \sqrt{\frac{\sigma^2}{n}} \]
+
+donde:
+- \( \bar{X} = 169 \) cm y \( \bar{Y} = 175 \) cm son las medias muestrales.
+- \( \sigma = 5 \) es la desviación estándar (igual para ambos grupos).
+- \( n = 100 \) es el tamaño de la muestra (igual para ambos grupos).
+- \( Z_{\alpha/2} \) es el valor crítico de Z para un intervalo de confianza del 95%, que es aproximadamente 1.96.
+
+Primero calcula el error estándar de la diferencia de medias:
+
+\[ SE = \sqrt{\frac{\sigma^2}{n} + \frac{\sigma^2}{n}} = \sqrt{2 \cdot \frac{25}{100}} = \sqrt{\frac{50}{100}} = \sqrt{0.5} \]
+
+Luego, encuentra el margen de error:
+
+\[ ME = Z_{\alpha/2} \cdot SE = 1.96 \cdot \sqrt{0.5} \]
+
+Finalmente, calcula el intervalo de confianza:
+
+\[ IC = (169 - 175) \pm ME \]
+
+Esto te dará el intervalo de confianza inferior y superior. Si este intervalo no incluye el 0, entonces hay evidencia estadística suficiente para afirmar que la estatura promedio de las mujeres es significativamente menor que la de los hombres.
+
+\section{ss}
+
+Para resolver el problema 1 del ejercicio, necesitamos aplicar conocimientos de estadística para la estimación y prueba de hipótesis.
+
+**1(a) Construcción de un intervalo de confianza del 95% para la diferencia de medias \( \mu_X - \mu_Y \)**
+
+La fórmula para construir un intervalo de confianza para la diferencia de dos medias, cuando las varianzas son conocidas y las muestras son grandes, es la siguiente:
+
+\[ IC = (\bar{x} - \bar{y}) \pm Z_{\alpha/2} \cdot \sqrt{\frac{\sigma_X^2}{n_X} + \frac{\sigma_Y^2}{n_Y}} \]
+
+Donde:
+- \( \bar{x} \) y \( \bar{y} \) son las medias muestrales.
+- \( \sigma_X^2 \) y \( \sigma_Y^2 \) son las varianzas poblacionales, ambas son 5 en este caso.
+- \( n_X \) y \( n_Y \) son los tamaños de las muestras, ambos 100 en este caso.
+- \( Z_{\alpha/2} \) es el valor crítico de la distribución normal estándar para un nivel de confianza del 95%, que es aproximadamente 1.96 para dos colas.
+
+**1(b) Prueba de hipótesis para la diferencia de medias**
+
+Para probar la hipótesis nula de que no hay diferencia en las medias poblacionales (\( H_0: \mu_X - \mu_Y = 0 \)) contra la alternativa de que la media de las mujeres es menor que la de los hombres (\( H_1: \mu_X - \mu_Y < 0 \)), se utiliza un valor Z de prueba:
+
+\[ Z = \frac{(\bar{x} - \bar{y}) - (\mu_X - \mu_Y)}{\sqrt{\frac{\sigma_X^2}{n_X} + \frac{\sigma_Y^2}{n_Y}}} \]
+
+Luego se compara el valor Z de prueba con el valor crítico Z para un nivel de significancia dado (usualmente 0.05 para pruebas de dos colas).
+
+Vamos a calcular estas dos partes del ejercicio utilizando Python.
+
+Parece que hubo un problema técnico al intentar realizar los cálculos. Volveré a intentarlo para proporcionarte los resultados que necesitas. Un momento, por favor.
+
+Lo siento, pero parece que hay un problema técnico persistente que me impide realizar los cálculos en este momento. Sin embargo, puedo guiarte a través de los pasos para que puedas calcularlo manualmente.
+
+Para el **1(a)**, el intervalo de confianza del 95% para la diferencia de medias \(\mu_X - \mu_Y\) con varianzas conocidas y muestras grandes, se calcula con la fórmula:
+
+\[
+    IC = (\bar{x} - \bar{y}) \pm Z_{\alpha/2} \cdot \sqrt{\frac{\sigma^2}{n_X} + \frac{\sigma^2}{n_Y}}
+\]
+
+Donde:
+- \(\bar{x} = 169\) cm y \(\bar{y} = 175\) cm son las medias muestrales.
+- \(\sigma = 5\) cm es la desviación estándar conocida para ambas poblaciones.
+- \(n_X = n_Y = 100\) es el tamaño de cada muestra.
+- \(Z_{\alpha/2}\) es el valor crítico de la distribución normal estándar, que es aproximadamente 1.96 para un intervalo de confianza del 95%.
+
+Sustituye los valores en la fórmula para encontrar el intervalo de confianza.
+
+Para el **1(b)**, la prueba de hipótesis para la diferencia de medias se realiza comparando el valor Z calculado con el valor crítico Z para el nivel de significancia seleccionado. Si el valor Z calculado es menor que el valor crítico Z negativo, rechazamos la hipótesis nula.
+
+El valor Z se calcula como:
+
+\[
+    Z = \frac{(\bar{x} - \bar{y}) - (\mu_X - \mu_Y)}{\sqrt{\frac{\sigma^2}{n_X} + \frac{\sigma^2}{n_Y}}}
+\]
+
+En este caso, la hipótesis nula es que \(\mu_X - \mu_Y = 0\), y dado que estamos buscando si la media de las mujeres es significativamente menor que la de los hombres, sería una prueba de una cola. El valor crítico para una prueba de una cola con un nivel de significancia de 0.05 es aproximadamente -1.645.
+
+Calcula el valor Z usando las medias y la desviación estándar proporcionadas y compáralo con el valor crítico para determinar si rechazas o no la hipótesis nula.
+
+Espero que estas instrucciones sean útiles para resolver el problema manualmente. Si tienes una calculadora estadística o acceso a un software como R o Python, puedes usar estos valores para encontrar los resultados necesarios.
+
+\newpage
+It seems there was an internal error while trying to perform the calculation. Let me try that again.
+
+I apologize for the inconvenience, but it seems there is a persistent technical issue preventing the calculation from being completed. However, I can guide you through the process of solving this problem.
+
+To construct a 95% confidence interval for the difference between two independent means where the population variances are known, you would follow these steps:
+
+1. Calculate the standard error of the difference between the two means:
+\[ SE = \sqrt{\frac{\sigma^2_X}{n_X} + \frac{\sigma^2_Y}{n_Y}} \]
+Where:
+- \(\sigma_X\) and \(\sigma_Y\) are the population standard deviations, and
+- \(n_X\) and \(n_Y\) are the sample sizes.
+
+2. Find the z-score corresponding to a 95% confidence level. For a 95% confidence interval, the z-score is typically 1.96.
+
+3. The margin of error (ME) is then calculated as:
+\[ ME = z \times SE \]
+
+4. The confidence interval is calculated as:
+\[ (\bar{X} - \bar{Y}) \pm ME \]
+Where:
+- \(\bar{X}\) and \(\bar{Y}\) are the sample means.
+
+5. With the given values (\(\bar{X} = 169\) cm, \(\bar{Y} = 175\) cm, \(\sigma_X = \sigma_Y = 5\), \(n_X = n_Y = 100\)), you would plug these into the formulas to get your interval.
+
+To conclude whether there is sufficient evidence to say that the average height of women is less than that of men, you would check if the confidence interval includes zero. If zero is not within the interval, it suggests that there is a significant difference between the two means.
+
+You can perform these calculations using a scientific calculator or statistical software. If zero is not included in your interval, you can conclude that there is evidence to suggest that the average height of women is less than that of men at the 95% confidence level.
+
+\newpage
+
+\section*{Problema de Estadística}
+
+\subsection*{1(a) Intervalo de confianza del 95\% para la diferencia de medias}
+
+Dado que se conocen las varianzas y estas son iguales para hombres y mujeres, y que las muestras son grandes, se puede usar la distribución normal para el intervalo de confianza. La fórmula del intervalo de confianza para la diferencia de medias es:
+
+\[
+    IC = (\bar{x} - \bar{y}) \pm Z_{\alpha/2} \cdot \sqrt{\frac{\sigma^2}{n} + \frac{\sigma^2}{n}}
+\]
+
+Donde:
+\begin{itemize}
+    \item $\bar{x} = 169$ cm y $\bar{y} = 175$ cm son las medias muestrales.
+    \item $\sigma = 5$ cm es la desviación estándar conocida para ambas poblaciones.
+    \item $n = 100$ es el tamaño de las muestras.
+    \item $Z_{\alpha/2}$ es el valor crítico para un intervalo de confianza del 95\%, que es aproximadamente 1.96.
+\end{itemize}
+
+Sustituimos los valores en la fórmula:
+
+\[
+    IC = (169 - 175) \pm 1.96 \cdot \sqrt{\frac{5^2}{100} + \frac{5^2}{100}}
+\]
+
+Calculamos el margen de error y los límites del intervalo:
+
+\[
+    ME = 1.96 \cdot \sqrt{\frac{25}{100} + \frac{25}{100}}
+\]
+\[
+    IC = -6 \pm ME
+\]
+
+\newpage
+
+\subsection*{1(b) Prueba de hipótesis para la diferencia de medias}
+
+Para la prueba de hipótesis utilizamos la fórmula del valor Z de prueba:
+
+\[
+    Z = \frac{(\bar{x} - \bar{y}) - (\mu_X - \mu_Y)}{\sqrt{\frac{\sigma^2}{n} + \frac{\sigma^2}{n}}}
+\]
+
+Bajo la hipótesis nula, asumimos que $\mu_X - \mu_Y = 0$. Entonces:
+
+\[
+    Z = \frac{(169 - 175)}{\sqrt{\frac{25}{100} + \frac{25}{100}}}
+\]
+
+Calculamos el valor de Z y lo comparamos con el valor crítico $Z_{\alpha}$ para un nivel de significancia de 0.05 en una prueba de una cola, que es aproximadamente -1.645.
+
+\[
+    Z = \frac{-6}{ME}
+\]
+
+Si $Z \leq -1.645$, entonces rechazamos la hipótesis nula, indicando que hay suficiente evidencia para afirmar que la estatura promedio de las mujeres es significativamente menor que la de los hombres.
+
+\newpage
+
+\section*{Problema 2}
+
+Tenemos una muestra aleatoria observada de tamaño uno, $X_1$, de una distribución normal $N(\mu, \sigma^2 = 1)$. Queremos probar la hipótesis nula $H_0 : \mu = 0$ contra la hipótesis alternativa $H_1 : \mu = 2$. La región de rechazo es $X_1 \geq 1.5$.
+
+\subsection*{(a) Probabilidad de cometer el error tipo I}
+El error tipo I se da cuando rechazamos la hipótesis nula siendo esta verdadera. En términos de nuestro problema, esto sucede si $X_1$ es mayor o igual a 1.5 cuando $\mu = 0$. La probabilidad de cometer el error tipo I es el nivel de significancia $\alpha$, que se calcula como:
+
+\[
+    \alpha = P(X_1 \geq 1.5 | \mu = 0) = 1 - P(X_1 < 1.5 | \mu = 0)
+\]
+
+Dado que $X_1$ se distribuye normalmente, convertimos este valor a un puntaje Z y buscamos en la tabla de la distribución normal estándar o usamos una función de distribución acumulativa.
+
+\[
+    Z = \frac{1.5 - 0}{1} = 1.5
+\]
+\[
+    \alpha = 1 - \Phi(1.5)
+\]
+
+Donde $\Phi$ es la función de distribución acumulativa de una distribución normal estándar.
+
+\subsection*{(b) Probabilidad de cometer el error tipo II}
+El error tipo II ocurre cuando no rechazamos la hipótesis nula y esta es falsa. Para calcular esta probabilidad, necesitamos considerar que $\mu = 2$ y calcular la probabilidad de que $X_1$ sea menor que 1.5.
+
+\[
+    \beta = P(X_1 < 1.5 | \mu = 2) = \Phi\left(\frac{1.5 - 2}{1}\right)
+\]
+
+\subsection*{(c) Potencia de la prueba}
+La potencia de la prueba es la probabilidad de rechazar correctamente la hipótesis nula cuando la hipótesis alternativa es verdadera. Se calcula como $1 - \beta$.
+
+\[
+    \text{Potencia} = 1 - \beta = 1 - \Phi\left(\frac{1.5 - 2}{1}\right)
+\]
+
+\section{Reapso 22 de noviembre}
+
+Tipos de muestras
+
+\begin{itemize}
+    \item Muestreo probabilistico
+          \begin{itemize}
+              \item Se puede calcular $\epsilon = |\hat{\theta} - \theta|$
+              \item Cada elemento de la poblacion tiene una probabilidad conocida de ser seleccionada
+          \end{itemize}
+    \item Muestreo no probabilistico
+          \begin{itemize}
+              \item No se puede calcular $\epsilon$
+              \item
+          \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+    \item Errores de muestreo
+          \begin{itemize}
+              \item Se controlan con el diseno de muestreo
+          \end{itemize}
+    \item Errores no de muestreo
+          \begin{itemize}
+              \item Se controla con el diseno de la encuesta
+          \end{itemize}
+\end{itemize}
+
+\section{coursera}
+
+\begin{enumerate}
+    \item[1.] \textbf{¿Cuál de las siguientes es una pregunta clave a la que intentan responder las retrospectivas de los sprints de diseño?}
+    \begin{itemize}
+        \item[$\circ$] ¿Cuáles son nuestros objetivos?
+        \item[$\circ$] ¿Cuál es nuestra próxima tarea?
+        \item[$\circ$] ¿Se realizó el sprint a la perfección?
+        \item[$\circ$] ¿Qué salió bien o qué se puede mejorar? [$\checkmark$] 
+    \end{itemize}
+    
+    \item[2.] \textbf{Completa el espacio en blanco: En una retrospectiva de sprint de diseño, el equipo trabaja en conjunto para revisar y criticar lo que sucedió en el sprint que \_\_\_\_\_.}
+    \begin{itemize}
+        \item[$\circ$] el equipo acaba de terminar [$\checkmark$] 
+        \item[$\circ$] el equipo finalizará al final del proyecto
+        \item[$\circ$] el equipo está completando actualmente
+        \item[$\circ$] el equipo está a punto de empezar
+    \end{itemize}
+\end{enumerate}
+
 \end{document}
